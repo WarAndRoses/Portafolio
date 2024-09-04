@@ -1,0 +1,262 @@
+    /* pseudoelemento customProperty */
+	:root {
+		--blanco: #ffffff; /*color para la fuente,  contenido y borde*/
+		--negro: #000000; /*color para el cuerpo*/
+		--gris: #222222; /*color para el borde*/
+		--gris-claro: #cccccc; /*color para el borde*/
+		--naranjo: #d17014; /*color para la caja caracteristicas, borde del círculo, imagen cuadrada y boton */
+		--negro-transparente: rgba(255, 255, 255, 0);/*color fondo semitransparente para el texto */
+		--cafe-claro:#9a6605; /* color para el boton hover */
+		--cafe-oscuro:#332201; /*color para el pie de página */
+	}
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;       
+    }
+
+    body{
+      background-color: var(--negro);
+    }
+    header {
+        text-align: center;   
+        justify-content: center;   
+    }
+    h1 {
+         color: var(--blanco);
+        font-size: 50px;
+        font-weight: 500;
+    }  
+    .leon{
+        width: 75%;
+        height: 75%;
+        border: 1px solid white ; 
+        box-shadow: grey  -2px 2px   ;  
+    }
+    @keyframes FadeIn{
+        from{
+            opacity: -5;}
+            to{
+                opacity: 5;
+            }
+        }
+    .principio{
+        opacity: 0;
+        animation: FadeIn 7s ease-out forwards;
+    }    
+
+    
+    .parte2{
+        display: grid;
+        grid-template-columns: repeat(8,1fr );
+        gap: 10px;
+        grid-template-rows: repeat(2,1fr) ;
+        padding: 10px;
+       }
+       #leones{
+        grid-column: span 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: span 2;
+        background-color: rgb(53, 48, 48);
+       }  
+       @keyframes slideUp{
+        from{
+            transform: translateY(400px);
+            opacity: 0;
+        }
+        to{
+            transform: translate(0);
+            opacity: 1;
+        }
+       }
+       #leones{
+        animation: slideUp 3s ease-out forwards ;
+            
+       }
+        .info{ background-color: white;
+        border: 1px solid;
+      grid-column: span 4;
+      text-align: center;
+      grid-row: span 2;
+       }
+       @keyframes slideDown{
+        from{
+            transform: translateY(-400px);
+            opacity: 0;
+        }
+        to{
+            transform: translate(0);
+            opacity: 1;
+        }
+       }
+       .info{
+        animation: slideDown 3s ease-out forwards;
+       }
+       .leones1{
+        width: 75%;
+        height: 75%;
+        border: 2px solid goldenrod; }
+	h2{       
+    color: var(--negro);
+        font-size: 30px;
+        font-weight: 500;
+        text-align: left;
+    }
+.image1, .image2, .image3{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid tomato; 
+    margin: 5px;
+    display: inline-block;  
+}
+.leones3 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.caja-caracteristicas{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(6,1fr);  
+}
+.Características{
+    grid-column: span 1;
+    grid-row: span 6;
+    background-color: white;  
+}
+.titulo-caracteristicas1, .titulo-caracteristicas2,.titulo-caracteristicas3{
+    border: 1px solid;
+    height: 40px;
+    background-color: var(--naranjo);
+    padding-top: 10px;
+    color: white;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.Características1, .Características2, .Características3{
+    border: 0.5px solid;
+    margin: 15px;
+}
+.leon-melena{
+    grid-column: span 1;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    grid-row: span 6;
+}
+.img-melena{
+    margin-top: 10px;
+    width: 60%;
+    height: 35%;
+    border: #d17014 2px solid;
+}
+.titulo-transparente{
+    border-radius: 5px;
+    background-color: #222222;
+    opacity: 0.7;
+z-index: 1;
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    right: 25%;
+    left: 35%;
+    margin-top: 40%;
+}
+.img-rey{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.rey-titulo{
+    color: var(--blanco);
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+}
+.formulario{
+    margin: 8%;
+    background-color: var(--blanco);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    border-radius: 5px;
+}
+ .titulo-footer{
+        text-align: center;
+    }
+.boton1 input[type="email"]{
+    height: 30px;
+    width: 80%;
+    margin: 10px;
+}
+.boton1 button[type="submit"]{
+    width: 80%;
+    height: 40px;
+    color: var(--blanco);
+    background-color: var(--naranjo);
+    margin-bottom: 10px;
+}
+.real-footer{
+    background-color: var(--blanco);
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: var(--cafe-oscuro);
+}
+
+@media only screen and (max-width: 480px) {
+
+.leones3{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.image2,.image3{
+    display: flex;
+    width: 100%;
+}
+    .image1{
+    display: none;
+}
+    .info{
+        grid-column: span 8;
+    }
+    #leones{
+        display: none;
+    }
+    .Características{
+        display: none;
+    }
+    .leon-melena{
+        grid-column: span 2;
+        .img-melena{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1023px) {
+  .Características{
+    display: none;
+  }
+  .leon-melena{
+    grid-column: span 2;
+    .img-melena{
+        display: none;
+    }
+  }
+
+}
+
+
+@media only screen and (min-width: 1024px) {}
+
+
+
+
+
+
